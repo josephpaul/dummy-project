@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MyCommerce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/categories">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart" >Cart <span class="badge bg-warning">{{cartCount}}</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container mt-3">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <img class="img-thumbnail" style="max-height:500px;width:auto" [src]="product.image" />
+
+            <h4 class="text-info">{{product.title}}</h4>
+
+            <div><small><b>{{product.category}}</b></small></div>
+
+
+        </div>
+
+        <div class="col-md-6 text-end">
+            <h3>{{product.price|currency}}</h3>
+
+            <button class="btn btn-secondary" (click)="addToCart(product)">Add To Cart</button>
+
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <i>{{product.description}}</i>
+
+        
+
+        </div>
+
+    </div>
+
+</div>
